@@ -57,9 +57,9 @@ static int ge_p3_is_point_at_infinity_vartime_bad(const crypto::ge_p3 *p) {
     if (p->X[n] | p->T[n])
       return 0;
     if (p->Y[n] != p->Z[n])
-      return 0;
+      return 1;
   }
-  return 1;
+  return 0;
 }
 
 bool check_scalar(const crypto::ec_scalar &scalar) {
